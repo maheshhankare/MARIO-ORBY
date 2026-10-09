@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#05060f">
+  <meta name="description" content="Orby Worlds: a six-world platformer with 1,100 levels, 56 collectible Orbys, peaceful music and an age-based educational quiz.">
+  <title>Orby Worlds</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cdefs%3E%3CradialGradient id=%22g%22 cx=%2235%25%22 cy=%2230%25%22%3E%3Cstop offset=%220%22 stop-color=%22%23b8fff1%22/%3E%3Cstop offset=%221%22 stop-color=%22%230e7c6b%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx=%2232%22 cy=%2232%22 r=%2228%22 fill=%22url(%23g)%22/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-root" aria-hidden="true"></div>
+
+  <div id="ui" class="hidden">
+    <main id="screen" class="screen"></main>
+  </div>
+
+  <div id="hud" class="hidden" aria-label="Game status">
+    <div class="hud-l">
+      <img id="hud-char" alt="">
+      <div>
+        <div id="hud-hearts" class="hearts" aria-label="Hearts"></div>
+        <div class="hud-row"><span class="i-coin" aria-hidden="true"></span><b id="hud-coins">0</b><span class="i-gem" aria-hidden="true"></span><b id="hud-gems">0</b><span id="hud-stars" class="hud-stars" aria-label="Stars">☆☆☆</span></div>
+      </div>
+    </div>
+    <div class="hud-c"><div id="hud-name"></div><div id="hud-time">0:00</div>
+      <div id="boss-bar" class="hidden"><div id="boss-name"></div><div class="bar boss"><i id="boss-hp"></i></div></div>
+    </div>
+    <div class="hud-r">
+      <div id="hud-ab" class="hud-ab" title="Special ability (E)"><span>✦</span><div><small>Ability · E</small><b id="hud-ab-name"></b></div></div>
+      <button class="btn ghost sm" data-act="pause" aria-label="Pause">❚❚</button>
+    </div>
+  </div>
+
+  <div id="touch" class="hidden"></div>
+  <div id="modal" class="hidden"></div>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="rotate-hint">Rotate your device to landscape for the best experience.</div>
+
+  <noscript>Orby Worlds needs JavaScript to run.</noscript>
+
+  <script src="vendor/phaser.min.js"></script>
+  <script src="src/core/ns.js"></script>
+  <script src="src/core/physics.js"></script>
+  <script src="src/data/characters.js"></script>
+  <script src="src/data/worlds.js"></script>
+  <script src="src/levelgen/validator.js"></script>
+  <script src="data/levels-w1.js"></script>
+  <script src="data/levels-w2.js"></script>
+  <script src="data/levels-w3.js"></script>
+  <script src="data/levels-w4.js"></script>
+  <script src="data/levels-w5.js"></script>
+  <script src="data/levels-w6.js"></script>
+  <script src="src/systems/save.js"></script>
+  <script src="src/quiz/bank.js"></script>
+  <script src="src/quiz/engine.js"></script>
+  <script src="src/audio/audio.js"></script>
+  <script src="src/render/art.js"></script>
+  <script src="src/systems/abilities.js"></script>
+  <script src="src/scenes/boss.js"></script>
+  <script src="src/scenes/game.js"></script>
+  <script src="src/scenes/cinematics.js"></script>
+  <script src="src/ui/ui.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
